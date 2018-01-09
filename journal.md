@@ -21,6 +21,8 @@ rm - deletes a file
 
 Again, hopefully this should be in a repository in my github account (FishySays), else how did you get here?
 
+
+
 ## Lab 2: Build a DC Motor
 
 ### What is a DC Motor?
@@ -43,7 +45,7 @@ After that, we took the 10m of copper wire supplied, and wrapped it around the c
 
 After this we created a support shaft out of a plank of cardboard, some paperclips creating this.
 
-
+![alt text](https://github.com/FishySays/journallymcjournal/blob/master/image_1.png)
 
 And then finally added magnets to either side of the commutator, completeing the setup.
 
@@ -53,94 +55,58 @@ And then finally added magnets to either side of the commutator, completeing the
 
  For our testing, we connected the commutator to a power source to act as brushes, and immediately saw the armature begin to rotate.
 
- This is our video of it working:
-
-### https://www.youtube.com/watch?v=kQmZnGIjSNc&feature=youtu.be
+[This is our video of it working:](https://www.youtube.com/watch?v=kQmZnGIjSNc&feature=youtu.be)
 
 ### Changes we'd make
 
- As seen in the final image, our coil was less than ideal, as was the copper tape around the cork, the uneven surface made it harder to
+As seen in the final image, our coil was less than ideal, as was the copper tape around the cork, the uneven surface made it harder to apply the "brushes" to the commutator, therefore next time we'd ensure the copper tape was perfectly smooth, perhaps as a classmate of ours did, by cutting a bit of the cork off and attaching it to the top of the copper wire, ensuring it at least stays rigid all the way around, whereas what we did was add the cork piece in after we'd realised our mistake.
 
- apply the "brushes" to the commutator, therefore next time we'd ensure the copper tape was perfectly smooth, perhaps as a classmate
+Another thing that would help to keep the brushes attached is we could have clamped them in place next to the wire, which would remove the human error shown in the video, where my lab partner's shaky hands caused it to stop.
 
- of ours did, by cutting a bit of the cork off and attaching it to the top of the copper wire, ensuring it at least stays rigid all the way
+To improve the way the armature rotates, I would instead 3D Print out a box with holes on either end, then when building this again, I would slide the pins through the hole into the cork waiting in the middle, which would be a lot more sturdy than the paperclips we used for this one.
 
- around, whereas what we did was add the cork piece in after we'd realised our mistake.
+ We believe from this experiment, talking with classmate who used less coils than us, that using more does increase the speed of the motor, however without testing this more accurately, we cannot say for certain.
 
- Another thing that would help to keep the brushes attached is we could have clamped them in place next to the wire, which would
 
- remove the human error shown in the video, where my lab partner's shaky hands caused it to stop.
-
- To improve the way the armature rotates, I would instead 3D Print out a box with holes on either end, then when building this again, I
-
- would slide the pins through the hole into the cork waiting in the middle, which would be a lot more sturdy than the paperclips we used
-
- for this one.
-
- We believe from this experiment, talking with classmate who used less coils than us, that using more does increase the speed of the
-
- motor, however without testing this more accurately, we cannot say for certain.
 
 ## Lab 3: Incremental Encoder
 
 ### What is an incremental encoder?
 
- An incremental encoder is defined as a pulse generator that creates square-wave signals and a zero index. (http://www.optical-
+ An incremental encoder is defined as a pulse generator that creates square-wave signals and a zero index. (<http://www.optical-encoders.eu/encoders.html>). Essentially, it converts a displacement (of the disk) into digital pulse signals.
 
- encoders.eu/encoders.html). Essentially, it converts a displacement (of the disk) into digital pulse signals.
+This is made using a rotating disk (usually set to a electric motor), a light source and a photo detector. It works by providing a set amount of pulses in a rotation of the encoder. By knowing the pulses in the rotation and the how long it is for a rotation to complete, you can use it to determine the current rotation of the encoder. This happens because as the encoder disk spins, it recieves pulses of light, which in turn create electrical pulses, which on an oscilloscope or an object looking for a signal, would come out as a 1, and when the target it blocked, creates a 0. As the disk rotates faster, so too does the pulse frequency, therefore the pulse frequency is an indication of the speed of the rotation.
 
- This is made using a rotating disk (usually set to a electric motor), a light source and a photo detector. It works by providing a set
-
- amount of pulses in a rotation of the encoder. By knowing the pulses in the rotation and the how long it is for a rotation to complete,
-
- you can use it to determine the current rotation of the encoder. This happens because as the encoder disk spins, it recieves pulses of
-
- light, which in turn create electrical pulses, which on an oscilloscope or an object looking for a signal, would come out as a 1, and when
-
- the target it blocked, creates a 0. As the disk rotates faster, so too does the pulse frequency, therefore the pulse frequency is an
-
- indication of the speed of the rotation.
-
- Other incremental encoders commonly use two output channels to determine the position, which are 90 degrees out of phase, which
-
- helps tell us which direction the encoder is spinning in (a > b = clockwise, b > a = counter clockwise, for example).
+Other incremental encoders commonly use two output channels to determine the position, which are 90 degrees out of phase, which helps tell us which direction the encoder is spinning in (a > b = clockwise, b > a = counter clockwise, for example).
 
 ### How did we build it?
 
+By using a photo transistor across from an ultraviolet LED, we were able to create a simplifier incremental encoder via the circuit below.
 
-### https://www.evernote.com/Home.action?_sourcePage=-9vv2m58H1riMUD9T65RG_YvRLZ-1eYO3fqfqRu0fynRL_1nukNa4gH1t86pc1SP&__fp=... 5/
+![alt text](https://github.com/FishySays/journallymcjournal/blob/master/image_2.png)
+Figure 1. The circuit diagram.
 
- By using a photo transistor across from an ultraviolet LED, we were able to create a simplifier incremental encoder via the circuit below.
+Across the phototransistor we hooked up an oscilloscope, and this was the completed circuit, minus the motor.
 
- Figure 1. The circuit diagram.
+![alt text](https://github.com/FishySays/journallymcjournal/blob/master/image_3.png)
 
- Across the phototransistor we hooked up an oscilloscope, and this was the completed circuit, minus the motor.
+Figure 2. The completed circuit, Voltage sense cable was added shortly after!
+
+For the motor, we simply added a cardboard disk with a cut-out slit on it to the central axle of the motor
 
 
-### https://www.evernote.com/Home.action?_sourcePage=-9vv2m58H1riMUD9T65RG_YvRLZ-1eYO3fqfqRu0fynRL_1nukNa4gH1t86pc1SP&__fp=... 6/
-
- Figure 2. The completed circuit, Voltage sense cable was added shortly after!
-
- For the motor, we simply added a cardboard disk with a cut-out slit on it to the central axle of the motor
 
 ### The encoder in action.
 
 
-### https://www.evernote.com/Home.action?_sourcePage=-9vv2m58H1riMUD9T65RG_YvRLZ-1eYO3fqfqRu0fynRL_1nukNa4gH1t86pc1SP&__fp=... 7/
+![alt text](https://github.com/FishySays/journallymcjournal/blob/master/image_4.png)
+Figure 3. The Encoder with commercial motor.
 
- Figure 3. The Encoder with commercial motor.
+Unfortunately during this lab session our motor gave up and would not work again. However, we did instead get hold of a commercial motor to see if our circuit worked, which after connecting it to an oscilloscope, showed it did work, as shown in this video:
 
- Unfortunately during this lab session our motor gave up and would not work again. However, we did instead get hold of a commercial
+https://www.youtube.com/watch?v=B1t7ziU7dFo
 
- motor to see if our circuit worked, which after connecting it to an oscilloscope, showed it did work, as shown in this video:
-
- https://www.youtube.com/watch?v=B1t7ziU7dFo
-
- In the video, you can see our square wave wasn't as clean as it could be, as the slot on our disk was far too small, so the encoder was
-
- only changing states very briefly. Also, we had a lot of noise on the system due to how close our led and phototransistor were to the
-
- board, so the disk couldn't get close enough.
+In the video, you can see our square wave wasn't as clean as it could be, as the slot on our disk was far too small, so the encoder was only changing states very briefly. Also, we had a lot of noise on the system due to how close our led and phototransistor were to the board, so the disk couldn't get close enough.
 
 ### Arduino Code
 
